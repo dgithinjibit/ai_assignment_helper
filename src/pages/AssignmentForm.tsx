@@ -13,27 +13,58 @@ const AssignmentForm = () => {
 
   const assignmentTypes = [
     { value: 'essay', label: 'Essay' },
-    { value: 'research', label: 'Research Paper' },
-    { value: 'presentation', label: 'Presentation' },
-    { value: 'report', label: 'Report' },
-    { value: 'other', label: 'Other' },
+    { value: 'math', label: 'Mathematics Problem' },
+    { value: 'code', label: 'Programming/ICT Project' },
+    { value: 'research', label: 'Research Project' },
+    { value: 'general', label: 'General Assignment' },
   ];
 
+  // CBC Curriculum subjects for Kenya
   const subjects = [
-    'English Literature',
-    'History',
-    'Psychology',
-    'Computer Science',
+    // Core Subjects (Primary & Secondary)
+    'Mathematics',
+    'English',
+    'Kiswahili',
+    'Science and Technology',
+    'Social Studies',
+    'Christian Religious Education',
+    'Islamic Religious Education',
+    'Hindu Religious Education',
+    
+    // Practical Subjects
+    'Home Science',
+    'Art and Craft',
+    'Music',
+    'Physical Education',
+    'Agriculture',
+    
+    // Languages
+    'French',
+    'German',
+    'Arabic',
+    'Indigenous Languages',
+    
+    // Secondary Level Subjects
     'Biology',
     'Chemistry',
     'Physics',
-    'Mathematics',
-    'Economics',
-    'Political Science',
-    'Philosophy',
-    'Sociology',
-    'Art History',
-    'Business',
+    'Geography',
+    'History and Government',
+    'Business Studies',
+    'Computer Studies',
+    'Life Skills Education',
+    
+    // Technical Subjects
+    'Building and Construction',
+    'Electrical Installation',
+    'Power Mechanics',
+    'Woodwork',
+    'Metalwork',
+    'Leather Work',
+    
+    // Other
+    'Career Guidance',
+    'Environmental Education',
     'Other',
   ];
 
@@ -68,7 +99,7 @@ const AssignmentForm = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-gray-900">New Assignment</h1>
-                <p className="text-xs text-gray-500">Create a new assignment with AI assistance</p>
+                <p className="text-xs text-gray-500">CBC Curriculum - Kenya</p>
               </div>
             </div>
           </div>
@@ -80,7 +111,8 @@ const AssignmentForm = () => {
           <div className="px-6 py-4 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">Assignment Details</h2>
             <p className="text-sm text-gray-600 mt-1">
-              Fill in the details below to create your assignment and get AI-powered assistance.
+              Create assignments aligned with Kenya's Competency-Based Curriculum (CBC). 
+              Our AI assistant follows KICD guidelines and supports learner-centered approaches.
             </p>
           </div>
 
@@ -110,7 +142,7 @@ const AssignmentForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject *
+                  CBC Subject *
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -120,7 +152,7 @@ const AssignmentForm = () => {
                     {...register('subject', { required: 'Subject is required' })}
                     className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
-                    <option value="">Select a subject</option>
+                    <option value="">Select a CBC subject</option>
                     {subjects.map((subject) => (
                       <option key={subject} value={subject}>
                         {subject}
@@ -180,11 +212,14 @@ const AssignmentForm = () => {
                 {...register('description', { required: 'Description is required' })}
                 rows={4}
                 className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Describe your assignment requirements, objectives, and any specific instructions..."
+                placeholder="Describe your assignment requirements, learning objectives, and any specific CBC competencies to be assessed..."
               />
               {errors.description && (
                 <p className="mt-1 text-sm text-red-600">{errors.description.message}</p>
               )}
+              <p className="mt-1 text-sm text-gray-500">
+                Include specific CBC competencies, learning outcomes, and assessment criteria as per KICD guidelines.
+              </p>
             </div>
 
             {/* Initial Content */}
@@ -196,11 +231,28 @@ const AssignmentForm = () => {
                 {...register('content')}
                 rows={6}
                 className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Start writing your assignment here, or leave blank to begin with AI assistance..."
+                placeholder="Start working on your assignment here, or leave blank to begin with AI assistance aligned to CBC standards..."
               />
               <p className="mt-1 text-sm text-gray-500">
-                You can add content now or start working on it after creating the assignment.
+                Our AI assistant will help ensure your work meets CBC learning outcomes and assessment standards.
               </p>
+            </div>
+
+            {/* CBC Compliance Notice */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="flex items-start space-x-3">
+                <div className="bg-blue-100 p-1 rounded-full">
+                  <BookOpen className="h-4 w-4 text-blue-600" />
+                </div>
+                <div className="text-sm">
+                  <h4 className="font-medium text-blue-900 mb-1">CBC Compliance</h4>
+                  <p className="text-blue-700">
+                    This AI assistant is designed to support Kenya's Competency-Based Curriculum, 
+                    promoting learner-centered approaches, critical thinking, and practical application 
+                    of knowledge as outlined by the Kenya Institute of Curriculum Development (KICD).
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Submit Button */}
