@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, BookOpen, Clock, CheckCircle, FileText, Search, Brain, User, LogOut } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
-import { useAssignments } from '../hooks/useAssignments';
 import { formatDate, getStatusColor } from '../utils/validation';
-import toast from 'react-hot-toast';
 
 const Dashboard = () => {
-  const { user, signOut } = useAuth();
-  const { assignments, loading } = useAssignments(user?.id);
-  const [showUserMenu, setShowUserMenu] = useState(false);
-
-  const handleSignOut = async () => {
-    try {
-      await signOut();
-      toast.success('Signed out successfully');
-    } catch (error) {
-      toast.error('Failed to sign out');
+  // Mock data for now since we removed auth
+  const mockAssignments = [
+    {
+      id: '1',
+      title: 'Essay on Climate Change',
+      subject: 'Environmental Science',
+      status: 'in_progress',
+      created_at: '2025-01-01',
+      due_date: '2025-01-15'
+    },
+    {
+      id: '2',
+      title: 'Research Paper on AI Ethics',
+      subject: 'Computer Science',
+      status: 'completed',
+      created_at: '2024-12-20',
+      due_date: '2025-01-10'
     }
-  };
+  ];
+
+  const assignments = mockAssignments;
 
   const stats = [
     {
@@ -57,14 +63,6 @@ const Dashboard = () => {
     return colors[color as keyof typeof colors];
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -90,28 +88,11 @@ const Dashboard = () => {
                 <span>New Assignment</span>
               </Link>
               
-              <div className="relative">
-                <button
-                  onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <User className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <span className="hidden md:block">{user?.email}</span>
-                </button>
-                
-                {showUserMenu && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-10">
-                    <button
-                      onClick={handleSignOut}
-                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
-                    >
-                      <LogOut className="h-4 w-4" />
-                      <span>Sign Out</span>
-                    </button>
-                  </div>
-                )}
+              <div className="flex items-center space-x-2 text-gray-700">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <User className="h-4 w-4 text-blue-600" />
+                </div>
+                <span className="hidden md:block">Student</span>
               </div>
             </div>
           </div>
@@ -122,7 +103,7 @@ const Dashboard = () => {
         {/* Welcome Section */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900">
-            Welcome back, {user?.user_metadata?.full_name || 'Student'}!
+            Welcome back, Student!
           </h2>
           <p className="text-gray-600 mt-2">
             Here's an overview of your academic progress and assignments.
@@ -194,23 +175,17 @@ const Dashboard = () => {
                         {assignment.due_date && ` • Due ${formatDate(assignment.due_date)}`}
                       </p>
                     </div>
-                    <Link 
-                      to={`/assignment/${assignment.id}`}
-                      className="text-blue-600 hover:text-blue-700 font-medium"
-                    >
+                    <button className="text-blue-600 hover:text-blue-700 font-medium">
                       View
-                    </Link>
+                    </button>
                   </div>
                 ))}
                 
                 {assignments.length > 5 && (
                   <div className="text-center pt-4">
-                    <Link 
-                      to="/assignments"
-                      className="text-blue-600 hover:text-blue-700 font-medium"
-                    >
+                    <button className="text-blue-600 hover:text-blue-700 font-medium">
                       View all assignments ({assignments.length})
-                    </Link>
+                    </button>
                   </div>
                 )}
               </div>

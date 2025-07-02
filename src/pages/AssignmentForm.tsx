@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ArrowLeft, Save, Brain, Calendar, BookOpen, FileText } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
-import { useAssignments } from '../hooks/useAssignments';
 import type { AssignmentFormData } from '../types';
 import toast from 'react-hot-toast';
 
 const AssignmentForm = () => {
-  const { user } = useAuth();
-  const { createAssignment } = useAssignments(user?.id);
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -42,22 +38,14 @@ const AssignmentForm = () => {
   ];
 
   const onSubmit = async (data: AssignmentFormData) => {
-    if (!user) {
-      toast.error('You must be logged in to create an assignment');
-      return;
-    }
-
     setIsSubmitting(true);
     
     try {
-      const assignment = await createAssignment({
-        ...data,
-        user_id: user.id,
-        status: 'draft',
-      });
+      // Mock assignment creation for now
+      console.log('Creating assignment:', data);
       
       toast.success('Assignment created successfully!');
-      navigate(`/assignment/${assignment.id}`);
+      navigate('/dashboard');
     } catch (error) {
       toast.error('Failed to create assignment');
     } finally {

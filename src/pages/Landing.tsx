@@ -58,13 +58,7 @@ const Landing = () => {
             
             <div className="flex items-center space-x-4">
               <Link 
-                to="/auth" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
-              >
-                Sign In
-              </Link>
-              <Link 
-                to="/auth" 
+                to="/dashboard" 
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
               >
                 Get Started
@@ -93,7 +87,7 @@ const Landing = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/auth"
+                  to="/dashboard"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
                 >
                   Start Your Assignment
@@ -199,7 +193,7 @@ const Landing = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="/auth"
+                to="/dashboard"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
               >
                 Start Free Trial
