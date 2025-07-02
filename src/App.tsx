@@ -4,6 +4,8 @@ import { Toaster } from 'react-hot-toast';
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import AssignmentForm from './pages/AssignmentForm';
+import AssignmentUpload from './pages/AssignmentUpload';
+import AssignmentAnalysis from './pages/AssignmentAnalysis';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/assignment/new" element={<AssignmentForm />} />
+          <Route path="/assignment/upload" element={<AssignmentUpload />} />
+          <Route path="/assignment/analysis/:id" element={<AssignmentAnalysis />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Toaster position="top-right" />

@@ -21,29 +21,82 @@ export interface Assignment {
   updated_at: string;
 }
 
-export interface AIResponse {
-  content: string;
-  suggestions: string[];
-  confidence: number;
+export interface AIResult {
+  id: string;
+  assignment_id: string;
+  workflow_type: string;
+  ai_response: {
+    competency_analysis: CompetencyAnalysis;
+    socratic_questions: SocraticQuestion[];
+    feedback_sections: FeedbackSection[];
+    learning_path: LearningPathItem[];
+    quality_score: number;
+  };
+  processing_time: number;
   tokens_used: number;
+  cost_estimate: number;
+  quality_score: number;
+  created_at: string;
 }
 
-export interface AuthState {
-  user: User | null;
-  loading: boolean;
-  error: string | null;
+export interface CompetencyAnalysis {
+  subject: string;
+  grade_level: string;
+  competencies: CompetencyAssessment[];
+  overall_level: 'novice' | 'developing' | 'proficient' | 'advanced';
+  strengths: string[];
+  areas_for_improvement: string[];
+  next_steps: string[];
 }
 
-export interface AssignmentFormData {
+export interface CompetencyAssessment {
+  name: string;
+  description: string;
+  level: 'novice' | 'developing' | 'proficient' | 'advanced';
+  evidence: string[];
+  suggestions: string[];
+  weight: number;
+}
+
+export interface SocraticQuestion {
+  id: string;
+  question: string;
+  purpose: string;
+  category: 'clarification' | 'assumptions' | 'evidence' | 'perspective' | 'implications' | 'meta';
+  difficulty: 'easy' | 'medium' | 'hard';
+  follow_up_hints: string[];
+}
+
+export interface FeedbackSection {
+  title: string;
+  category: 'structure' | 'content' | 'language' | 'critical_thinking' | 'creativity';
+  score: number;
+  feedback: string;
+  specific_examples: string[];
+  improvement_suggestions: string[];
+  resources: Resource[];
+}
+
+export interface LearningPathItem {
+  id: string;
   title: string;
   description: string;
-  subject: string;
-  assignment_type: Assignment['type'];
-  due_date?: string;
-  content?: string;
+  type: 'concept' | 'skill' | 'practice' | 'assessment';
+  difficulty: number;
+  estimated_time: number;
+  prerequisites: string[];
+  resources: Resource[];
+  completed: boolean;
 }
 
-// CBC-specific types for Kenya's Competency-Based Curriculum
+export interface Resource {
+  title: string;
+  type: 'article' | 'video' | 'exercise' | 'book' | 'website';
+  url?: string;
+  description: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+}
+
 export interface CBCCompetency {
   id: string;
   subject: string;
@@ -72,11 +125,37 @@ export interface LearningOutcome {
   assessment_methods: string[];
 }
 
-// Kenya-specific educational standards
 export interface KICDStandard {
   subject: string;
   grade_level: string;
   core_competencies: string[];
   values: string[];
   pertinent_issues: string[];
+}
+
+export interface AuthState {
+  user: User | null;
+  loading: boolean;
+  error: string | null;
+}
+
+export interface AssignmentFormData {
+  title: string;
+  description: string;
+  subject: string;
+  assignment_type: Assignment['type'];
+  due_date?: string;
+  content?: string;
+  grade_level?: string;
+  learning_objectives?: string[];
+}
+
+export interface AnalysisProgress {
+  stage: 'uploading' | 'processing' | 'analyzing' | 'generating' | 'completed';
+  progress: number;
+  message: string;
+}
+
+export interface Theme {
+  mode: 'light' | 'dark';
 }
