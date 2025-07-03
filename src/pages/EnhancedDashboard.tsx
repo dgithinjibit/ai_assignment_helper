@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Upload, BarChart3, BookOpen, Target, Users, Settings, Bell } from 'lucide-react';
+import { Brain, Upload, BarChart3, BookOpen, Target, Settings, Bell, User } from 'lucide-react';
 import AssignmentInput from '../components/ui/AssignmentInput';
 import CBCProgressDashboard from '../components/analysis/CBCProgressDashboard';
 import ThemeToggle from '../components/ui/ThemeToggle';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
+import UserProfile from '../components/ui/UserProfile';
 import { useAuth } from '../hooks/useAuth';
 
 const EnhancedDashboard = () => {
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
   const [activeTab, setActiveTab] = useState('submit');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   const tabs = [
     { key: 'submit', label: 'Submit Assignment', icon: Upload },
@@ -35,6 +37,13 @@ const EnhancedDashboard = () => {
     } finally {
       setIsAnalyzing(false);
     }
+  };
+
+  const getDisplayName = () => {
+    if (profile?.full_name) return profile.full_name;
+    if (user?.user_metadata?.full_name) return user.user_metadata.full_name;
+    if (user?.email) return user.email.split('@')[0];
+    return 'Student';
   };
 
   return (
@@ -64,12 +73,15 @@ const EnhancedDashboard = () => {
                 <Settings className="h-5 w-5" />
               </button>
               
-              <div className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
-                <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
-                  <Users className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+              <button
+                onClick={() => setShowProfile(true)}
+                className="flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                  <User className="h-4 w-4 text-white" />
                 </div>
-                <span className="hidden md:block">{user?.email || 'Student'}</span>
-              </div>
+                <span className="hidden md:block font-medium">{getDisplayName()}</span>
+              </button>
             </div>
           </div>
         </div>
@@ -83,11 +95,70 @@ const EnhancedDashboard = () => {
           className="mb-8"
         >
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Welcome back, Student!
+            Welcome back, {getDisplayName()}!
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
             Continue your CBC learning journey with AI-powered educational guidance and competency-based assessment.
           </p>
+          
+          {/* Quick Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Credits</p>
+                  <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    {profile?.credits || 10}
+                  </p>
+                </div>
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                  <Target className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Plan</p>
+                  <p className="text-lg font-semibold text-green-600 dark:text-green-400 capitalize">
+                    {profile?.plan || 'Free'}
+                  </p>
+                </div>
+                <div className="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
+                  <BookOpen className="h-5 w-5 text-green-600 dark:text-green-400" />
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Grade Level</p>
+                  <p className="text-lg font-semibold text-purple-600 dark:text-purple-400">
+                    {profile?.grade_level || 'Not Set'}
+                  </p>
+                </div>
+                <div className="p-2 bg-purple-100 dark:bg-purple-900 rounded-lg">
+                  <BarChart3 className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Auth Method</p>
+                  <p className="text-lg font-semibold text-orange-600 dark:text-orange-400 capitalize">
+                    {user?.user_metadata?.auth_method || user?.app_metadata?.provider || 'Email'}
+                  </p>
+                </div>
+                <div className="p-2 bg-orange-100 dark:bg-orange-900 rounded-lg">
+                  <User className="h-5 w-5 text-orange-600 dark:text-orange-400" />
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Tab Navigation */}
@@ -154,6 +225,9 @@ const EnhancedDashboard = () => {
           )}
         </motion.div>
       </div>
+
+      {/* User Profile Modal */}
+      <UserProfile isOpen={showProfile} onClose={() => setShowProfile(false)} />
     </div>
   );
 };
