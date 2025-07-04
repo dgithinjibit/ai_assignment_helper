@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Upload, MessageSquare, BookOpen, Target, Settings, Bell, User, Send, Paperclip } from 'lucide-react';
+import { Brain, Upload, MessageSquare, BookOpen, Target, Settings, Bell, User, Send, Paperclip, Star, Heart, Sparkles, Smile } from 'lucide-react';
 import AssignmentInput from '../components/ui/AssignmentInput';
 import CBCProgressDashboard from '../components/analysis/CBCProgressDashboard';
 import ThemeToggle from '../components/ui/ThemeToggle';
@@ -25,7 +25,7 @@ const EnhancedDashboard = () => {
     {
       id: '1',
       type: 'ai',
-      content: 'Habari! I am Mwalimu AI, your personal teacher for the CBC curriculum. Upload your assignment and let\'s start learning together! What subject are you working on today?',
+      content: 'Hey there, superstar! 🌟 I\'m Mwalimu AI, your super friendly learning buddy! Upload your homework and let\'s have some fun learning together! What subject are we exploring today? 📚✨',
       timestamp: new Date(),
     }
   ]);
@@ -33,9 +33,9 @@ const EnhancedDashboard = () => {
   const [currentAssignment, setCurrentAssignment] = useState<any>(null);
 
   const tabs = [
-    { key: 'chat', label: 'Chat with Mwalimu', icon: MessageSquare },
-    { key: 'progress', label: 'CBC Progress', icon: Target },
-    { key: 'resources', label: 'Learning Resources', icon: BookOpen },
+    { key: 'chat', label: 'Chat with Mwalimu', icon: MessageSquare, emoji: '💬' },
+    { key: 'progress', label: 'My Progress', icon: Target, emoji: '📈' },
+    { key: 'resources', label: 'Fun Resources', icon: BookOpen, emoji: '🎮' },
   ];
 
   const handleAssignmentSubmit = async (data: any) => {
@@ -47,7 +47,7 @@ const EnhancedDashboard = () => {
       const userMessage: ChatMessage = {
         id: Date.now().toString(),
         type: 'user',
-        content: `I've uploaded my ${data.assignmentType} assignment: "${data.title}" for ${data.subject} (${data.gradeLevel})`,
+        content: `Hi Mwalimu! I've uploaded my ${data.assignmentType} assignment: "${data.title}" for ${data.subject} (${data.gradeLevel}) 📝`,
         timestamp: new Date(),
         assignmentContext: {
           title: data.title,
@@ -64,21 +64,23 @@ const EnhancedDashboard = () => {
       const aiResponse: ChatMessage = {
         id: (Date.now() + 1).toString(),
         type: 'ai',
-        content: `Excellent! I've received your ${data.subject} assignment "${data.title}". I can see this is for ${data.gradeLevel}. Let me analyze your work according to CBC standards.
+        content: `Awesome! 🎉 I've got your ${data.subject} assignment "${data.title}" right here! This looks like a great ${data.gradeLevel} project! 
 
-Based on what you've submitted, I can help you with:
-• Understanding the assignment requirements
-• Developing your ideas step by step
-• Connecting your work to CBC competencies
-• Improving your approach through guided questions
+I'm so excited to help you with this! 🤗 Here's what we can do together:
 
-What specific aspect would you like to discuss first? Are you looking for help with:
-1. Understanding what the assignment is asking for
-2. Organizing your thoughts and ideas
-3. Improving your writing or problem-solving approach
-4. Connecting your work to CBC learning outcomes
+🎯 **Let's explore your assignment step by step!**
+• I can help you understand what the assignment is asking for
+• We can brainstorm ideas together 
+• I'll guide you through organizing your thoughts
+• We can make sure your work shows off your amazing skills!
 
-Feel free to ask me any questions about your assignment!`,
+What would you like to start with? You can ask me:
+1. "What does this assignment want me to do?" 🤔
+2. "Can you help me get started?" 🚀
+3. "How can I make this really good?" ⭐
+4. "I'm stuck on this part..." 🤝
+
+Don't worry - we'll figure this out together! I'm here to help you succeed! 💪✨`,
         timestamp: new Date(),
       };
       
@@ -123,42 +125,44 @@ Feel free to ask me any questions about your assignment!`,
 
   const generateAIResponse = (userMessage: string, assignment: any) => {
     const responses = [
-      `That's a great question! Let me guide you through this step by step. ${assignment ? `For your ${assignment.subject} assignment` : 'In CBC learning'}, we focus on understanding rather than just getting answers. What do you think is the main concept being tested here?`,
+      `That's such a great question! 🤔 Let me help you think through this step by step. ${assignment ? `For your ${assignment.subject} assignment` : 'In your learning journey'}, the most important thing is understanding the "why" behind everything. What do you think is the main idea here? 🎯`,
       
-      `I can see you're thinking critically about this! That's exactly what CBC encourages. Let's explore this further - can you tell me what you already know about this topic? This will help me understand how to best guide you.`,
+      `I love how you're thinking about this! 🌟 You're asking exactly the right questions! Let's explore this together - what do you already know about this topic? This will help me understand how to guide you best! 🗺️`,
       
-      `Excellent observation! In the CBC curriculum, we emphasize connecting learning to real life. How do you think this concept applies to situations you might encounter outside of school?`,
+      `Excellent thinking! 💡 You know what's really cool? This connects to so many things in real life! Can you think of a time when you might use this knowledge outside of school? That's what makes learning so exciting! 🌍`,
       
-      `You're on the right track! Let me ask you a guiding question: What evidence or examples can you think of that support your thinking? This will help strengthen your understanding.`,
+      `You're doing amazing! 🎉 Here's a fun way to think about it: What clues or evidence can you find that support your thinking? It's like being a detective! 🔍 Let's solve this mystery together!`,
       
-      `That's a thoughtful approach! In CBC, we value the learning process as much as the outcome. What challenges are you facing with this particular aspect? Let's work through them together.`
+      `Great question, my friend! 🤗 Learning is all about the journey, not just the destination. What part of this feels tricky to you? Let's break it down into smaller, easier pieces! We've got this! 💪✨`
     ];
     
     return responses[Math.floor(Math.random() * responses.length)];
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:bg-gradient-to-br dark:from-gray-900 dark:via-blue-900 dark:to-purple-900">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-2 rounded-xl shadow-lg">
                 <Brain className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">Mwalimu AI</h1>
-                <p className="text-xs text-gray-500 dark:text-gray-400">CBC Curriculum - Kenya</p>
+                <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Mwalimu AI
+                </h1>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Your Fun Learning Friend! 🌟</p>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
               <ThemeToggle />
-              <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                 <Bell className="h-5 w-5" />
               </button>
-              <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <button className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                 <Settings className="h-5 w-5" />
               </button>
             </div>
@@ -171,30 +175,32 @@ Feel free to ask me any questions about your assignment!`,
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-8 text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-            Welcome to Mwalimu AI!
+          <div className="text-4xl mb-4">🎉</div>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Welcome to Your Learning Adventure!
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-2">
-            Your personal AI teacher for CBC learning. Upload an assignment to start our conversation.
+          <p className="text-gray-600 dark:text-gray-400 mt-2 text-lg">
+            Upload your homework and let's have some fun learning together! 🚀✨
           </p>
         </motion.div>
 
         {/* Tab Navigation */}
         <div className="mb-8">
-          <div className="border-b border-gray-200 dark:border-gray-700">
-            <nav className="-mb-px flex space-x-8">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-2 shadow-lg border border-gray-200 dark:border-gray-700">
+            <nav className="flex space-x-2">
               {tabs.map((tab) => (
                 <button
                   key={tab.key}
                   onClick={() => setActiveTab(tab.key)}
-                  className={`py-2 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
+                  className={`flex-1 py-3 px-4 rounded-xl font-medium text-sm flex items-center justify-center space-x-2 transition-all duration-200 ${
                     activeTab === tab.key
-                      ? 'border-blue-500 text-blue-600 dark:text-blue-400'
-                      : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
+                      ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg transform scale-105'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
                   }`}
                 >
+                  <span className="text-lg">{tab.emoji}</span>
                   <tab.icon className="h-4 w-4" />
                   <span>{tab.label}</span>
                 </button>
@@ -214,36 +220,50 @@ Feel free to ask me any questions about your assignment!`,
             <div className="grid lg:grid-cols-3 gap-8">
               {/* Chat Interface */}
               <div className="lg:col-span-2">
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 h-[600px] flex flex-col">
+                <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 h-[600px] flex flex-col overflow-hidden">
                   {/* Chat Header */}
-                  <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+                  <div className="px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                        <Brain className="h-5 w-5 text-white" />
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                        <Brain className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white">Mwalimu AI</h3>
-                        <p className="text-sm text-green-600 dark:text-green-400">Online • CBC Teacher</p>
+                        <h3 className="font-bold text-lg">Mwalimu AI</h3>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                          <p className="text-sm text-blue-100">Online • Ready to Help! 🤗</p>
+                        </div>
+                      </div>
+                      <div className="ml-auto flex space-x-1">
+                        <Star className="h-4 w-4 text-yellow-300" />
+                        <Heart className="h-4 w-4 text-pink-300" />
+                        <Sparkles className="h-4 w-4 text-purple-300" />
                       </div>
                     </div>
                   </div>
 
                   {/* Chat Messages */}
-                  <div className="flex-1 overflow-y-auto p-6 space-y-4">
+                  <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-blue-50/50 to-purple-50/50 dark:from-gray-800/50 dark:to-gray-900/50">
                     {chatMessages.map((message) => (
                       <div
                         key={message.id}
                         className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
                       >
                         <div
-                          className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                          className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl shadow-lg ${
                             message.type === 'user'
-                              ? 'bg-blue-600 text-white'
-                              : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white'
+                              ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                              : 'bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600'
                           }`}
                         >
-                          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                          <p className="text-xs mt-1 opacity-70">
+                          {message.type === 'ai' && (
+                            <div className="flex items-center space-x-2 mb-2">
+                              <Smile className="h-4 w-4 text-blue-500" />
+                              <span className="text-xs font-medium text-blue-600 dark:text-blue-400">Mwalimu AI</span>
+                            </div>
+                          )}
+                          <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
+                          <p className="text-xs mt-2 opacity-70">
                             {message.timestamp.toLocaleTimeString()}
                           </p>
                         </div>
@@ -252,10 +272,10 @@ Feel free to ask me any questions about your assignment!`,
                     
                     {isAnalyzing && (
                       <div className="flex justify-start">
-                        <div className="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-lg">
-                          <div className="flex items-center space-x-2">
+                        <div className="bg-white dark:bg-gray-700 px-4 py-3 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-600">
+                          <div className="flex items-center space-x-3">
                             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
-                            <span className="text-sm text-gray-600 dark:text-gray-400">Mwalimu is thinking...</span>
+                            <span className="text-sm text-gray-600 dark:text-gray-400">Mwalimu is thinking... 🤔</span>
                           </div>
                         </div>
                       </div>
@@ -263,9 +283,9 @@ Feel free to ask me any questions about your assignment!`,
                   </div>
 
                   {/* Chat Input */}
-                  <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
-                    <div className="flex items-center space-x-2">
-                      <button className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+                  <div className="px-6 py-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex items-center space-x-3">
+                      <button className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                         <Paperclip className="h-5 w-5" />
                       </button>
                       <input
@@ -273,13 +293,13 @@ Feel free to ask me any questions about your assignment!`,
                         value={currentMessage}
                         onChange={(e) => setCurrentMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                        placeholder="Ask Mwalimu about your assignment..."
-                        className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        placeholder="Ask me anything about your homework! 😊"
+                        className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                       />
                       <button
                         onClick={handleSendMessage}
                         disabled={!currentMessage.trim() || isAnalyzing}
-                        className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105 shadow-lg"
                       >
                         <Send className="h-5 w-5" />
                       </button>
@@ -300,11 +320,28 @@ Feel free to ask me any questions about your assignment!`,
           )}
           
           {activeTab === 'resources' && (
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">CBC Learning Resources</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Curated resources aligned with Kenya's Competency-Based Curriculum coming soon...
-              </p>
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 p-8">
+              <div className="text-center">
+                <div className="text-6xl mb-6">🎮</div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Fun Learning Resources</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-lg">
+                  Exciting games, videos, and activities are coming soon to make learning even more fun! 🌟
+                </p>
+                <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="bg-blue-100 dark:bg-blue-900 p-4 rounded-xl text-center">
+                    <div className="text-2xl mb-2">🎯</div>
+                    <p className="text-sm font-medium text-blue-800 dark:text-blue-200">Math Games</p>
+                  </div>
+                  <div className="bg-green-100 dark:bg-green-900 p-4 rounded-xl text-center">
+                    <div className="text-2xl mb-2">📚</div>
+                    <p className="text-sm font-medium text-green-800 dark:text-green-200">Story Time</p>
+                  </div>
+                  <div className="bg-purple-100 dark:bg-purple-900 p-4 rounded-xl text-center">
+                    <div className="text-2xl mb-2">🔬</div>
+                    <p className="text-sm font-medium text-purple-800 dark:text-purple-200">Science Fun</p>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
         </motion.div>
