@@ -1,22 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Lightbulb, Target, Zap, Brain, CheckCircle, Search, FileText, GraduationCap, Users, Award, Chrome, Wallet } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
+import { ArrowRight, BookOpen, Lightbulb, Target, Zap, Brain, CheckCircle, Search, FileText, GraduationCap, Upload } from 'lucide-react';
 
 const Landing = () => {
-  const { user } = useAuth();
-
   const features = [
     {
       icon: Brain,
-      title: "CBC-Aligned AI Assistant",
+      title: "CBC-Aligned AI Mentor",
       description: "Get intelligent assistance that follows Kenya's Competency-Based Curriculum guidelines and KICD standards.",
       color: "blue"
     },
     {
       icon: Search,
-      title: "Research & Citation Tools",
-      description: "Find credible sources and learn proper citation methods aligned with Kenyan academic standards.",
+      title: "Interactive Learning",
+      description: "Engage in meaningful conversations about your assignments with personalized guidance.",
       color: "purple"
     },
     {
@@ -65,27 +62,18 @@ const Landing = () => {
                 <Brain className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900 dark:text-white">AI Assignment Helper</h1>
+                <h1 className="text-xl font-bold text-gray-900 dark:text-white">Mwalimu AI</h1>
                 <p className="text-xs text-gray-500 dark:text-gray-400">CBC Curriculum - Kenya</p>
               </div>
             </div>
             
             <div className="flex items-center space-x-4">
-              {user ? (
-                <Link 
-                  to="/dashboard" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-                >
-                  Go to Dashboard
-                </Link>
-              ) : (
-                <Link 
-                  to="/auth" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
-                >
-                  Get Started
-                </Link>
-              )}
+              <Link 
+                to="/dashboard" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+              >
+                Start Learning
+              </Link>
             </div>
           </div>
         </div>
@@ -102,41 +90,27 @@ const Landing = () => {
                   Kenya's CBC Curriculum
                 </div>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-                  Excel in Your
+                  Meet Your AI
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {' '}CBC Journey
+                    {' '}Mwalimu
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Get AI-powered assistance tailored to Kenya's Competency-Based Curriculum. 
-                  From Mathematics to Kiswahili, Science to Social Studies - excel in every subject 
-                  with guidance that follows KICD standards.
+                  Upload your assignment and start a conversation with your AI teacher. 
+                  Get personalized guidance tailored to Kenya's Competency-Based Curriculum. 
+                  From Mathematics to Kiswahili, Science to Social Studies - learn through interactive dialogue.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                {user ? (
-                  <Link 
-                    to="/dashboard"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
-                  >
-                    Continue Learning
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                ) : (
-                  <>
-                    <Link 
-                      to="/auth"
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
-                    >
-                      Start Learning
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <button className="border-2 border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:bg-gray-50 dark:hover:bg-gray-800">
-                      View Demo
-                    </button>
-                  </>
-                )}
+                <Link 
+                  to="/dashboard"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
+                >
+                  <Upload className="mr-2 h-5 w-5" />
+                  Upload & Start Learning
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
               
               <div className="flex items-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
@@ -146,11 +120,11 @@ const Landing = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span>All CBC Subjects</span>
+                  <span>Interactive Learning</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span>Competency-Based</span>
+                  <span>Personalized Guidance</span>
                 </div>
               </div>
             </div>
@@ -162,7 +136,7 @@ const Landing = () => {
                     <BookOpen className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-2">CBC Standards</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">AI assistance that follows Kenya Institute of Curriculum Development guidelines.</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">AI guidance that follows Kenya Institute of Curriculum Development guidelines.</p>
                 </div>
                 
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
@@ -179,70 +153,22 @@ const Landing = () => {
                   <div className="bg-green-100 dark:bg-green-900 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                     <Lightbulb className="h-6 w-6 text-green-600 dark:text-green-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Critical Thinking</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Develop analytical skills and problem-solving abilities as emphasized in CBC.</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Interactive Dialogue</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Engage in meaningful conversations about your assignments with your AI Mwalimu.</p>
                 </div>
                 
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700">
                   <div className="bg-orange-100 dark:bg-orange-900 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                     <Zap className="h-6 w-6 text-orange-600 dark:text-orange-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Practical Skills</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">Apply knowledge practically with hands-on learning approaches.</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Instant Feedback</h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">Get immediate, personalized responses to your questions and assignments.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Authentication Options Preview */}
-      {!user && (
-        <section className="py-16 bg-white dark:bg-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                Multiple Ways to Get Started
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Choose your preferred sign-in method for a personalized learning experience
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Chrome className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Google Account</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Quick and secure sign-in with your existing Google account
-                </p>
-              </div>
-
-              <div className="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                <div className="bg-orange-100 dark:bg-orange-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Wallet className="h-8 w-8 text-orange-600 dark:text-orange-400" />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">MetaMask Wallet</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Connect with your MetaMask wallet for Web3 authentication
-                </p>
-              </div>
-
-              <div className="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl">
-                <div className="bg-green-100 dark:bg-green-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-green-600 dark:text-green-400" />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Email & Password</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  Traditional email registration with secure password protection
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* CBC Subjects Section */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
@@ -275,11 +201,11 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              CBC-Aligned Learning Support
+              Your Personal AI Mwalimu
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Our AI assistant is specifically designed to support Kenya's educational framework, 
-              promoting competency-based learning and holistic development.
+              Experience personalized learning through interactive conversations with an AI teacher 
+              designed specifically for Kenya's educational framework.
             </p>
           </div>
 
@@ -305,19 +231,20 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Ready to Excel in Your CBC Studies?
+              Ready to Start Learning with Mwalimu AI?
             </h2>
             <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
-              Join Kenyan students who are already improving their academic performance with 
-              AI assistance designed specifically for the Competency-Based Curriculum.
+              Upload your assignment and begin an interactive learning conversation with your AI teacher. 
+              Get personalized guidance designed specifically for the Competency-Based Curriculum.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to={user ? "/dashboard" : "/auth"}
+                to="/dashboard"
                 className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center group"
               >
-                {user ? 'Go to Dashboard' : 'Start Learning Now'}
+                <Upload className="mr-2 h-5 w-5" />
+                Start Learning Now
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -329,7 +256,7 @@ const Landing = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4" />
-                <span>All CBC Subjects</span>
+                <span>Interactive Learning</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4" />
