@@ -1,85 +1,39 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-// Auth helpers
-export const auth = {
-  signUp: async (email: string, password: string, fullName?: string) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          full_name: fullName,
-        },
-      },
-    });
-    return { data, error };
+// Mock Supabase client for demo purposes
+export const supabase = {
+  auth: {
+    getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+    onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+    getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+    signOut: () => Promise.resolve({ error: null }),
   },
-
-  signIn: async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    return { data, error };
-  },
-
-  signOut: async () => {
-    const { error } = await supabase.auth.signOut();
-    return { error };
-  },
-
-  getCurrentUser: async () => {
-    const { data: { user }, error } = await supabase.auth.getUser();
-    return { user, error };
-  },
+  from: () => ({
+    select: () => ({
+      eq: () => ({
+        single: () => Promise.resolve({ data: null, error: null })
+      })
+    }),
+    insert: () => ({
+      select: () => ({
+        single: () => Promise.resolve({ data: null, error: null })
+      })
+    }),
+    update: () => ({
+      eq: () => ({
+        select: () => ({
+          single: () => Promise.resolve({ data: null, error: null })
+        })
+      })
+    }),
+    upsert: () => Promise.resolve({ error: null })
+  })
 };
 
-// Database helpers
+// Mock database helpers for demo
 export const db = {
   assignments: {
-    create: async (assignment: Omit<Assignment, 'id' | 'created_at' | 'updated_at'>) => {
-      const { data, error } = await supabase
-        .from('assignments')
-        .insert(assignment)
-        .select()
-        .single();
-      return { data, error };
-    },
-
-    getByUserId: async (userId: string) => {
-      const { data, error } = await supabase
-        .from('assignments')
-        .select('*')
-        .eq('user_id', userId)
-        .order('created_at', { ascending: false });
-      return { data, error };
-    },
-
-    update: async (id: string, updates: Partial<Assignment>) => {
-      const { data, error } = await supabase
-        .from('assignments')
-        .update({ ...updates, updated_at: new Date().toISOString() })
-        .eq('id', id)
-        .select()
-        .single();
-      return { data, error };
-    },
-
-    delete: async (id: string) => {
-      const { error } = await supabase
-        .from('assignments')
-        .delete()
-        .eq('id', id);
-      return { error };
-    },
+    create: async (assignment: any) => ({ data: { id: 'demo-id', ...assignment }, error: null }),
+    getByUserId: async (userId: string) => ({ data: [], error: null }),
+    update: async (id: string, updates: any) => ({ data: { id, ...updates }, error: null }),
+    delete: async (id: string) => ({ error: null }),
   },
 };

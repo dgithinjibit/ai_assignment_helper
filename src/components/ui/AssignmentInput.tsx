@@ -55,14 +55,13 @@ const AssignmentInput: React.FC<AssignmentInputProps> = ({ onSubmit, loading = f
   ];
 
   const handleFileSelect = (file: File) => {
-    // In a real implementation, you would extract text from the file
     const reader = new FileReader();
     reader.onload = (e) => {
       const content = e.target?.result as string;
       setFormData(prev => ({ 
         ...prev, 
         content,
-        title: file.name.replace(/\.[^/.]+$/, '') // Remove file extension
+        title: file.name.replace(/\.[^/.]+$/, '')
       }));
     };
     reader.readAsText(file);

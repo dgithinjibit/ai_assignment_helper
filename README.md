@@ -1,1 +1,82 @@
-🎓 AI Assignment Helper - Competency-Based Educational Mentor  > **An intelligent educational platform that acts as a Socratic tutor, guiding students to discover solutions through competency-based assessment rather than providing direct answers.**  ## 🚀 What Makes This Different  Unlike traditional AI tutors that simply give answers, this platform embodies the **CS50 rubber duck debugging philosophy** - it guides students through the thinking process, helping them develop critical reasoning skills and deep understanding.  ### ✨ Key Features  - **🎯 Competency-Based Assessment**: Maps assignments to specific learning objectives and tracks skill development - **🤔 Socratic Questioning**: Guides discovery through thought-provoking questions instead of direct solutions   - **📊 Multi-Modal Analysis**: Handles essays, code, math problems, and research papers with specialized feedback - **📈 Learning Analytics**: Tracks progress, identifies knowledge gaps, and suggests personalized learning paths - **⚡ Real-Time Processing**: Lightning-fast AI analysis with interactive progress tracking  ## 🛠️ Tech Stack  - **Frontend**: React + TypeScript + Tailwind CSS - **Backend**: Supabase (Auth, Database, Real-time) - **AI Engine**: Groq API with Llama 3.1 70B - **Deployment**: Production-ready with comprehensive error handling  ## 🎨 Educational Philosophy  Built on proven pedagogical principles: - **Scaffolded Learning**: Progressive difficulty with guided skill building - **Metacognitive Development**: Helps students understand their thinking process - **Evidence-Based Feedback**: Specific, actionable insights tied to competencies - **Growth Mindset**: Focuses on improvement journey, not just final grades  ## 🚀 Quick Start  ```bash git clone https://github.com/yourusername/ai-assignment-helper cd ai-assignment-helper npm install npm run dev ```  ## 🎓 Perfect For  - Students seeking deeper understanding (not just answers) - Educators wanting competency-based assessment tools   - Learning institutions implementing modern pedagogical approaches - Anyone who believes in learning through guided discovery  ## 🏆 Built for Impact  Created during a hackathon with the vision of transforming how students interact with AI - moving from passive answer-seeking to active learning and critical thinking development.  ---  **"Give a student an answer and they complete one assignment. Teach them to think critically and they excel in lifelong learning."**
+# 🎓 Mwalimu AI - Your Fun Learning Friend!
+
+**An intelligent educational platform designed specifically for Kenyan students aged 5-18, aligned with Kenya's Competency-Based Curriculum (CBC).**
+
+## 🌟 What Makes Mwalimu AI Special
+
+Mwalimu AI is not just another AI tutor - it's your personal learning buddy that makes studying fun and engaging! Built specifically for Kenyan students, it follows the CBC curriculum and helps develop critical thinking through friendly conversations.
+
+### ✨ Key Features
+
+- **🤖 Friendly AI Companion**: Chat with Mwalimu AI in a fun, conversational way
+- **📚 CBC Curriculum Aligned**: Supports all CBC subjects from Grade 1 to Form 4
+- **🎯 Competency-Based Learning**: Tracks progress across CBC's 7 core competencies
+- **💬 Interactive Chat Interface**: Upload homework and have meaningful conversations
+- **🌍 Kenyan Context**: Understands local curriculum, culture, and educational needs
+- **🎨 Kid-Friendly Design**: Colorful, engaging interface designed for young learners
+
+## 🎨 Supported CBC Subjects
+
+- **Core Subjects**: Mathematics, English, Kiswahili, Science & Technology, Social Studies
+- **Religious Education**: CRE, IRE, HRE
+- **Practical Subjects**: Home Science, Art & Craft, Music, Physical Education, Agriculture
+- **Languages**: French, German, Arabic, Indigenous Languages
+- **Technical Subjects**: Computer Studies, Building & Construction, and more
+
+## 🚀 Getting Started
+
+1. **Visit the App**: Open Mwalimu AI in your browser
+2. **Upload Your Homework**: Drag and drop or select your assignment file
+3. **Start Chatting**: Have a friendly conversation about your work
+4. **Learn Together**: Get guidance, ask questions, and discover answers
+
+## 🎯 CBC Core Competencies Supported
+
+1. **Communication and Collaboration**
+2. **Critical Thinking and Problem Solving**
+3. **Imagination and Creativity**
+4. **Citizenship**
+5. **Digital Literacy**
+6. **Learning to Learn**
+7. **Self-Efficacy**
+
+## 🏗️ Built With
+
+- **Frontend**: React + TypeScript + Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Netlify
+
+## 🎓 Educational Philosophy
+
+Mwalimu AI follows the Socratic method and CBC principles:
+- **Learner-Centered**: Students discover answers through guided questioning
+- **Competency-Based**: Focus on what students can do with knowledge
+- **Values Integration**: Promotes CBC core values (Respect, Responsibility, Honesty, etc.)
+- **Culturally Relevant**: Aligned with Kenyan educational context
+
+## 🌟 Perfect For
+
+- **Students**: Ages 5-18 seeking fun, interactive learning support
+- **Parents**: Supporting their children's CBC learning journey
+- **Teachers**: Supplementing classroom instruction with AI assistance
+- **Schools**: Implementing modern, technology-enhanced learning
+
+## 🚀 Demo Features
+
+This demo version includes:
+- Interactive chat interface with Mwalimu AI
+- File upload functionality for assignments
+- CBC progress tracking dashboard
+- Fun, kid-friendly design elements
+- Responsive design for all devices
+
+## 🎉 Why "Mwalimu"?
+
+"Mwalimu" means "teacher" in Kiswahili, reflecting our commitment to Kenyan education and culture. Mwalimu AI embodies the spirit of a caring, patient teacher who makes learning enjoyable and accessible for every child.
+
+---
+
+**"Learning should be an adventure, not a chore!"** - Mwalimu AI 🌟
+
+Made with ❤️ for Kenyan students and the global learning community.
