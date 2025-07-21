@@ -79,4 +79,4 @@ This demo version includes:
 
 **"Learning should be an adventure, not a chore!"** - Mwalimu AI 🌟
 
-Made with ❤️ for Kenyan students and the global learning community.
+Made with ❤️ for Kenyan students and the global learning community BY A KENYAN TEACHER.
