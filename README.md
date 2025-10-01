@@ -1,44 +1,52 @@
-# 🎓 Mwalimu AI - Your Fun Learning Friend!
+# 🎓 Naija Scholar - Your Smart Learning Companion!
 
-**An intelligent educational platform designed specifically for Kenyan students aged 5-18, aligned with Kenya's Competency-Based Curriculum (CBC).**
+**An intelligent educational platform designed specifically for Nigerian students, aligned with Nigeria's 9-3-4 Education System and the 2025 Curriculum Reforms.**
 
-## 🌟 What Makes Mwalimu AI Special
+## 🌟 What Makes Naija Scholar Special
 
-Mwalimu AI is not just another AI tutor - it's your personal learning buddy that makes studying fun and engaging! Built specifically for Kenyan students, it follows the CBC curriculum and helps develop critical thinking through friendly conversations.
+Naija Scholar is not just another AI tutor - it's your comprehensive learning and career guidance platform that makes studying engaging and career-focused! Built specifically for Nigerian students, it follows the reformed curriculum structure and helps develop both academic excellence and practical skills.
 
 ### ✨ Key Features
 
-- **🤖 Friendly AI Companion**: Chat with Mwalimu AI in a fun, conversational way
-- **📚 CBC Curriculum Aligned**: Supports all CBC subjects from Grade 1 to Form 4
-- **🎯 Competency-Based Learning**: Tracks progress across CBC's 7 core competencies
-- **💬 Interactive Chat Interface**: Upload homework and have meaningful conversations
-- **🌍 Kenyan Context**: Understands local curriculum, culture, and educational needs
-- **🎨 Kid-Friendly Design**: Colorful, engaging interface designed for young learners
+- **🤖 Smart AI Tutor**: Interactive learning companion for all education levels
+- **📚 9-3-4 System Aligned**: Supports Primary 1-6, JSS 1-3, and SSS 1-3 curricula
+- **🎯 Skill-Based Learning**: Focus on digital, vocational, and entrepreneurial skills
+- **📝 Exam Preparation**: BECE, WAEC/NECO SSCE, and JAMB UTME preparation
+- **🏆 Career Guidance**: University course finder and scholarship alerts
+- **🛠️ TVET Integration**: Trade subjects like Solar PV, Fashion Design, and more
+- **🌍 Nigerian Context**: Understands local curriculum, culture, and educational needs
+- **🎨 Multi-Level Design**: Adaptive interface for different age groups and education levels
 
-## 🎨 Supported CBC Subjects
+## 🎨 Nigerian Education System Coverage (9-3-4 Structure)
 
-- **Core Subjects**: Mathematics, English, Kiswahili, Science & Technology, Social Studies
-- **Religious Education**: CRE, IRE, HRE
-- **Practical Subjects**: Home Science, Art & Craft, Music, Physical Education, Agriculture
-- **Languages**: French, German, Arabic, Indigenous Languages
-- **Technical Subjects**: Computer Studies, Building & Construction, and more
+### **Core Modules**
+1. **📚 Digital Curriculum Hub** - Video lessons aligned with 2025 reformed curriculum
+2. **🛠️ Skill & Trade Mastery (TVET)** - Practical skills like Solar PV, Fashion Design, Computer Repairs
+3. **🎯 Exam Prep Navigator** - BECE, WAEC/NECO SSCE, and JAMB UTME preparation
+4. **🧭 Higher Ed & Career Compass** - University course finder and scholarship alerts
+5. **📖 Basic Literacy & Numeracy Boost** - Foundation skills for early learners and out-of-school youth
+
+### **Supported Subjects (2025 Reformed Curriculum)**
+- **Core Subjects**: English Studies, Mathematics, Basic Science & Technology
+- **New 2025 Subjects**: Citizenship and Heritage Studies, Digital Technologies
+- **Trade Subjects**: Solar PV Installation, Fashion Design, Computer Hardware & GSM Repairs, Livestock Farming
+- **Nigerian Languages**: Hausa, Igbo, Yoruba (with multi-language support)
+- **Senior Secondary**: Physics, Chemistry, Biology, Literature, Geography, Economics, Government
 
 ## 🚀 Getting Started
 
-1. **Visit the App**: Open Mwalimu AI in your browser
-2. **Upload Your Homework**: Drag and drop or select your assignment file
-3. **Start Chatting**: Have a friendly conversation about your work
-4. **Learn Together**: Get guidance, ask questions, and discover answers
+1. **Select Your Level**: Choose from Primary (P1-P6), JSS (JSS1-JSS3), or SSS (SSS1-SSS3)
+2. **Choose Your Module**: Access age-appropriate learning modules
+3. **Learn & Practice**: Engage with interactive content and practice tests
+4. **Track Progress**: Monitor your learning journey and exam readiness
 
-## 🎯 CBC Core Competencies Supported
+## 🎯 Educational Goals Supported
 
-1. **Communication and Collaboration**
-2. **Critical Thinking and Problem Solving**
-3. **Imagination and Creativity**
-4. **Citizenship**
-5. **Digital Literacy**
-6. **Learning to Learn**
-7. **Self-Efficacy**
+1. **Universal Basic Education (UBE)** - Foundation literacy and numeracy
+2. **TVET Integration** - Practical skills for workforce readiness
+3. **Exam Excellence** - Terminal examination preparation (BECE, SSCE, UTME)
+4. **Career Guidance** - University admission and scholarship support
+5. **Digital Literacy** - 21st-century skills development
 
 ## 🏗️ Built With
 
@@ -49,34 +57,75 @@ Mwalimu AI is not just another AI tutor - it's your personal learning buddy that
 
 ## 🎓 Educational Philosophy
 
-Mwalimu AI follows the Socratic method and CBC principles:
-- **Learner-Centered**: Students discover answers through guided questioning
-- **Competency-Based**: Focus on what students can do with knowledge
-- **Values Integration**: Promotes CBC core values (Respect, Responsibility, Honesty, etc.)
-- **Culturally Relevant**: Aligned with Kenyan educational context
+Naija Scholar aligns with Nigeria's 2025 educational reforms and priorities:
+- **9-3-4 System Alignment**: Comprehensive coverage from Primary to Tertiary preparation
+- **Skill-Based Learning**: Emphasis on practical, vocational, and entrepreneurial skills
+- **Exam-Focused**: Strategic preparation for high-stakes terminal examinations
+- **Career-Oriented**: University admission guidance and scholarship opportunities
+- **Culturally Relevant**: Nigerian context, languages, and educational needs
 
 ## 🌟 Perfect For
 
-- **Students**: Ages 5-18 seeking fun, interactive learning support
-- **Parents**: Supporting their children's CBC learning journey
-- **Teachers**: Supplementing classroom instruction with AI assistance
-- **Schools**: Implementing modern, technology-enhanced learning
+- **Primary Students (P1-P6)**: Foundation literacy, numeracy, and curriculum mastery
+- **JSS Students (JSS1-JSS3)**: BECE preparation and trade skill development
+- **SSS Students (SSS1-SSS3)**: WAEC/NECO/JAMB preparation and university guidance
+- **Out-of-School Youth**: Catch-up literacy and numeracy programs
+- **Parents & Teachers**: Supporting Nigerian curriculum implementation
+- **Schools**: Implementing 2025 curriculum reforms with technology
 
-## 🚀 Demo Features
+## 🚀 Recent Enhancements (Based on Educational Research)
 
-This demo version includes:
-- Interactive chat interface with Mwalimu AI
-- File upload functionality for assignments
-- CBC progress tracking dashboard
-- Fun, kid-friendly design elements
-- Responsive design for all devices
+### Enhanced Nigerian Context Integration
+- **Real Nigerian Universities**: Integration with actual Nigerian federal, state, and private universities
+- **Authentic Scholarship Database**: Real scholarship opportunities from NDDC, PTDF, Lagos State, and more
+- **Career Salary Data**: Realistic Nigerian salary ranges and career progression paths
+- **State-by-State Filtering**: University and scholarship search by Nigerian states
 
-## 🎉 Why "Mwalimu"?
+### Advanced TVET Implementation
+- **Comprehensive Trade Skills**: Enhanced Solar PV, Fashion Design, Computer Repairs, and more
+- **Career Pathway Mapping**: Detailed salary expectations and growth potential for each trade
+- **Certification Tracking**: Industry-recognized certifications and assessment pathways
+- **Entrepreneurship Integration**: Business skills training for each trade skill
 
-"Mwalimu" means "teacher" in Kiswahili, reflecting our commitment to Kenyan education and culture. Mwalimu AI embodies the spirit of a caring, patient teacher who makes learning enjoyable and accessible for every child.
+### Improved Exam Preparation
+- **Subject Combination Validator**: Check JAMB subject requirements for specific courses
+- **University Cut-off Integration**: Real cut-off marks and admission requirements
+- **Past Questions Database**: Comprehensive WAEC, NECO, and JAMB past questions
+- **Mock Exam Simulations**: Full-length practice tests with detailed analytics
+
+### Enhanced Career Guidance
+- **University Course Finder**: Search by state, course type, and admission requirements
+- **Scholarship Alert System**: Deadline tracking and eligibility matching
+- **Career Interview Series**: Success stories from Nigerian professionals
+- **Salary Benchmarking**: Industry-standard salary ranges for different careers
+
+## 🚀 Key Features
+
+This comprehensive platform includes:
+- **Multi-level Learning Modules** adapted to Nigerian education structure
+- **Exam Preparation Tools** for BECE, WAEC, NECO, and JAMB
+- **TVET Integration** with practical trade skills training
+- **University Course Finder** with JAMB subject combination validation
+- **Scholarship Database** for local and international opportunities
+- **Multi-language Support** (English, Hausa, Igbo, Yoruba)
+- **Progress Tracking** aligned with Nigerian assessment standards
+
+## 🇳🇬 Why "Naija Scholar"?
+
+"Naija Scholar" reflects our commitment to Nigerian education excellence. The platform embodies Nigeria's educational aspirations - from foundational literacy to university admission success, supporting every student's journey through the 9-3-4 system with pride in Nigerian identity and global competitiveness.
+
+## 🏛️ Educational Partnerships
+
+Naija Scholar is designed to work with key Nigerian educational agencies:
+- **Federal Ministry of Education (FME)** - Curriculum alignment
+- **NERDC** - Content validation and standards
+- **UBEC** - Basic education implementation
+- **WAEC/NECO** - Examination preparation
+- **JAMB** - University admission support
+- **State Education Boards** - Regional customization
 
 ---
 
-**"Learning should be an adventure, not a chore!"** - Mwalimu AI 🌟
+**"Excellence in Education, Pride in Nigeria!"** - Naija Scholar 🇳🇬
 
-Made with ❤️ for Kenyan students and the global learning community BY A KENYAN TEACHER.
+Made with ❤️ for Nigerian students and the pursuit of educational excellence in the 9-3-4 system.

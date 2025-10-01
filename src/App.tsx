@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Toaster } from 'react-hot-toast';
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import Landing from './pages/Landing';
-import EnhancedDashboard from './pages/EnhancedDashboard';
+import NaijaScholarDashboard from './pages/NaijaScholarDashboard';
 import AssignmentUpload from './pages/AssignmentUpload';
 import AssignmentAnalysis from './pages/AssignmentAnalysis';
 
@@ -14,7 +14,7 @@ function App() {
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/dashboard" element={<EnhancedDashboard />} />
+            <Route path="/dashboard" element={<NaijaScholarDashboard />} />
             <Route path="/assignment/upload" element={<AssignmentUpload />} />
             <Route path="/assignment/analysis/:id" element={<AssignmentAnalysis />} />
             <Route path="*" element={<Navigate to="/" />} />

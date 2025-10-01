@@ -5,44 +5,44 @@ import { ArrowRight, BookOpen, Lightbulb, Target, Zap, Brain, CheckCircle, Searc
 const Landing = () => {
   const features = [
     {
-      icon: Brain,
-      title: "Your AI Learning Buddy",
-      description: "Meet your friendly AI teacher who makes learning fun and helps you understand everything step by step!",
-      color: "blue",
-      emoji: "🤖"
-    },
-    {
-      icon: Search,
-      title: "Chat & Learn Together",
-      description: "Ask questions, get help, and have fun conversations about your homework and projects!",
-      color: "purple",
-      emoji: "💬"
-    },
-    {
-      icon: FileText,
-      title: "All School Subjects",
-      description: "From Math to English, Science to Kiswahili - get help with any subject you're studying!",
+      icon: BookOpen,
+      title: "Digital Curriculum Hub",
+      description: "Video lessons and quizzes aligned with Nigeria's 2025 reformed curriculum for all education levels!",
       color: "green",
       emoji: "📚"
     },
     {
-      icon: CheckCircle,
-      title: "Learn at Your Pace",
-      description: "No pressure! Learn as fast or slow as you want. Your AI buddy is always patient and kind.",
+      icon: Target,
+      title: "Exam Prep Navigator",
+      description: "Master BECE, WAEC/NECO SSCE, and JAMB UTME with comprehensive practice tests and past questions!",
+      color: "blue",
+      emoji: "🎯"
+    },
+    {
+      icon: Brain,
+      title: "Skill & Trade Mastery",
+      description: "Learn practical TVET skills like Solar PV, Fashion Design, and Computer Repairs with entrepreneurship training!",
       color: "orange",
-      emoji: "⭐"
+      emoji: "🛠️"
+    },
+    {
+      icon: GraduationCap,
+      title: "Career Compass",
+      description: "Find your perfect university course, check JAMB requirements, and discover scholarship opportunities!",
+      color: "purple",
+      emoji: "🧭"
     }
   ];
 
-  const cbcSubjects = [
+  const nigerianSubjects = [
     { name: "Mathematics", icon: "🔢", color: "bg-blue-100 text-blue-600" },
-    { name: "English", icon: "📖", color: "bg-green-100 text-green-600" },
-    { name: "Kiswahili", icon: "🇰🇪", color: "bg-red-100 text-red-600" },
-    { name: "Science", icon: "🔬", color: "bg-purple-100 text-purple-600" },
-    { name: "Social Studies", icon: "🌍", color: "bg-yellow-100 text-yellow-600" },
-    { name: "Art & Craft", icon: "🎨", color: "bg-pink-100 text-pink-600" },
-    { name: "Music", icon: "🎵", color: "bg-indigo-100 text-indigo-600" },
-    { name: "Sports", icon: "⚽", color: "bg-orange-100 text-orange-600" },
+    { name: "English Studies", icon: "📖", color: "bg-green-100 text-green-600" },
+    { name: "Citizenship & Heritage", icon: "🇳🇬", color: "bg-red-100 text-red-600" },
+    { name: "Digital Technologies", icon: "💻", color: "bg-purple-100 text-purple-600" },
+    { name: "Basic Science", icon: "🔬", color: "bg-yellow-100 text-yellow-600" },
+    { name: "Solar PV Installation", icon: "☀️", color: "bg-orange-100 text-orange-600" },
+    { name: "Fashion Design", icon: "✂️", color: "bg-pink-100 text-pink-600" },
+    { name: "Nigerian Languages", icon: "🗣️", color: "bg-indigo-100 text-indigo-600" },
   ];
 
   const getColorClasses = (color: string) => {
@@ -66,10 +66,10 @@ const Landing = () => {
                 <Brain className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Mwalimu AI
+                <h1 className="text-xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                  Naija Scholar
                 </h1>
-                <p className="text-xs text-gray-500 dark:text-gray-400">Your Fun Learning Friend! 🌟</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Your Smart Learning Companion! 🇳🇬</p>
               </div>
             </div>
             
@@ -94,17 +94,17 @@ const Landing = () => {
               <div className="space-y-6">
                 <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-green-100 to-blue-100 text-green-800 dark:from-green-900 dark:to-blue-900 dark:text-green-200 mb-4 shadow-md">
                   <GraduationCap className="h-4 w-4 mr-2" />
-                  <span>For Students Ages 5-18 📚</span>
+                  <span>Nigerian Education System (9-3-4) 🇳🇬</span>
                 </div>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-                  Hey there! Meet
-                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent block">
-                    Mwalimu AI! 🤖✨
+                  Welcome to
+                  <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent block">
+                    Naija Scholar! 🎓✨
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                  I'm your super friendly AI teacher! 🎉 Upload your homework and let's chat about it together. 
-                  I'll help you understand everything in a fun way - no boring lectures, just friendly conversations! 💫
+                  Your comprehensive learning and career guidance platform! 🚀 From Primary to SSS, master the 2025 reformed curriculum, 
+                  develop practical skills, ace your exams (BECE, WAEC, JAMB), and discover your perfect university course! 🌟
                 </p>
               </div>
               
@@ -181,15 +181,15 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              All Your School Subjects! 📚✨
+              2025 Reformed Curriculum Subjects! 📚✨
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              I can help you with any subject you're studying - just upload your work and let's chat about it!
+              Master core subjects, develop trade skills, and prepare for your future with Nigeria's updated curriculum!
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {cbcSubjects.map((subject, index) => (
+            {nigerianSubjects.map((subject, index) => (
               <div 
                 key={index}
                 className="bg-white/80 dark:bg-gray-700/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center border border-gray-200 dark:border-gray-600 transform hover:scale-105"
@@ -207,10 +207,10 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Kids Love Mwalimu AI! 💖
+              Why Nigerian Students Choose Naija Scholar! 💖
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              I'm not just any AI - I'm your personal learning buddy who makes studying fun and easy!
+              Your complete educational companion from Primary to University - aligned with Nigerian curriculum and career goals!
             </p>
           </div>
 
@@ -241,10 +241,10 @@ const Landing = () => {
           <div className="space-y-8">
             <div className="text-6xl mb-6">🎉</div>
             <h2 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Ready to Have Fun Learning?
+              Ready to Excel in Your Studies?
             </h2>
             <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
-              Upload your homework and start chatting with me! I promise to make learning fun, easy, and exciting! 🌟
+              Join thousands of Nigerian students mastering the 9-3-4 system! From Primary to University admission - we've got you covered! 🌟
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
